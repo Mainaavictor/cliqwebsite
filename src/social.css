@@ -1,0 +1,2 @@
+.social-links{display:flex;align-items:center;gap:16px;font-size:11px}.social-links span{color:#ffffff59;margin-right:4px}.social-links a{color:var(--orange);border-bottom:1px solid transparent}.social-links a:hover{border-color:var(--orange)}
+@media(max-width:760px){.social-links{flex-wrap:wrap;gap:10px 16px}.social-links span{width:100%;margin:0}}
