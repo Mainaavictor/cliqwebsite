@@ -13,10 +13,26 @@
   object-fit: contain;
 }
 .corporate-image {
-  background-image: url('https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=1200&q=90');
+  background-image: url('/Photos-Cliq/offsite%20corporate%20team.jpeg');
 }
 .featured-image {
   background-image: url('https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1400&q=90');
+}
+.story-image video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.story-image {
+  height: 680px;
+}
+.quote-image {
+  height: 560px;
+  background: #e8eee8;
+}
+.quote-image img {
+  object-fit: contain;
 }
 .journal {
   position: relative;
@@ -149,10 +165,22 @@
     margin: -12px 7px 0;
   }
   .journal {
-    padding-bottom: 110px;
+    position: relative;
+    z-index: 3;
+    padding-bottom: 150px;
+    margin-bottom: 24px;
+  }
+  .quote-section {
+    z-index: 2;
   }
   .story-reading h2 {
     margin-bottom: 42px;
+  }
+  .story-image {
+    height: 460px;
+  }
+  .quote-image {
+    height: 460px;
   }
   .story-reading article {
     grid-template-columns: 1fr;
