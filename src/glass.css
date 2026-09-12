@@ -1,9 +1,15 @@
-/* Frosted surfaces add depth while preserving the Cliqadventures palette. */
+/* Frosted surfaces add depth while preserving the bright Cliqadventures palette. */
 .site-header {
-  background: rgba(11, 37, 69, 0.72);
-  -webkit-backdrop-filter: blur(18px) saturate(135%);
-  backdrop-filter: blur(18px) saturate(135%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(7, 91, 104, 0.2);
+  -webkit-backdrop-filter: blur(16px) saturate(145%);
+  backdrop-filter: blur(16px) saturate(145%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+.site-header.scrolled {
+  background: rgba(7, 91, 104, 0.38);
+  border-bottom-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 8px 24px rgba(7, 45, 53, 0.12);
 }
 .logo img {
   display: block;
@@ -11,6 +17,22 @@
   max-height: 62px;
   height: auto;
   object-fit: contain;
+  mix-blend-mode: lighten;
+}
+.logo {
+  background: rgba(128, 128, 128, 0.42);
+  width: 104px;
+  height: 58px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  overflow: hidden;
+  justify-content: center;
+}
+.logo img {
+  width: 104px;
+  max-height: none;
+  transform: scale(1.35);
 }
 .corporate-image {
   background-image: url('/Photos-Cliq/offsite%20corporate%20team.jpeg');
@@ -50,6 +72,12 @@
   z-index: 2;
   clear: both;
   margin-top: 0;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+.quote-intro {
+  width: min(100%, 620px);
+  justify-self: center;
 }
 .our-story {
   background: #edf2ed;
@@ -125,41 +153,112 @@
 }
 .package-card {
   overflow: hidden;
+  background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 12px;
   box-shadow: 0 18px 40px rgba(11, 37, 69, 0.09);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.package-card:hover {
+  border-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 24px 48px rgba(11, 37, 69, 0.15);
+  transform: translateY(-5px);
 }
 .card-body {
   margin: -16px 10px 0;
+  padding: 23px 20px 18px;
   position: relative;
+  border-radius: 9px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.package-card:hover .card-body {
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow: 0 18px 34px rgba(11, 37, 69, 0.1), inset 0 1px rgba(255, 255, 255, 0.8);
+}
+.card-body h3 {
+  transition: color 0.25s ease;
+}
+.package-card:hover .card-body h3 {
+  color: var(--teal);
+}
+.card-actions a {
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.card-actions a:hover {
+  transform: translateX(3px);
 }
 .quote-form {
-  padding: 35px;
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.18);
-  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.14), inset 0 1px rgba(255, 255, 255, 0.16);
+  padding: 38px;
+  gap: 36px;
+  width: min(100%, 620px);
+  justify-self: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 14px;
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.16), inset 0 1px rgba(255, 255, 255, 0.2);
+}
+.quote-form .form-row {
+  gap: 36px;
+}
+.quote-form label {
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 700;
+  letter-spacing: 1.2px;
 }
 .quote-form input,
-.quote-form select {
+.quote-form select,
+.quote-form textarea {
   background: rgba(255, 255, 255, 0.04);
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 11px 12px 14px;
+  border-radius: 5px 5px 0 0;
+  font-size: 16px;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+.quote-form input:hover,
+.quote-form select:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+.quote-form input:focus,
+.quote-form select:focus,
+.quote-form textarea:focus {
+  background: rgba(255, 255, 255, 0.11);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1), 0 2px 0 var(--orange);
+  transform: translateY(-1px);
+}
+.quote-form .button {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.quote-form .button:hover,
+.quote-form .button:focus-visible {
+  box-shadow: 0 10px 24px rgba(244, 162, 97, 0.24);
 }
 .floating-whatsapp {
   border: 1px solid rgba(255, 255, 255, 0.55);
   box-shadow: 0 12px 30px rgba(11, 37, 69, 0.28), inset 0 1px rgba(255, 255, 255, 0.4);
 }
+.floating-whatsapp .whatsapp-mark {
+  width: 25px;
+  height: 25px;
+  fill: currentColor;
+}
 @media (max-width: 760px) {
   .logo img {
-    width: 96px;
-    max-height: 56px;
+    width: 92px;
+    max-height: none;
+  }
+  .logo {
+    width: 92px;
+    height: 52px;
   }
   .nav-links.open {
-    background: rgba(11, 37, 69, 0.9);
-    -webkit-backdrop-filter: blur(18px);
-    backdrop-filter: blur(18px);
+    background: rgba(7, 91, 104, 0.48);
+    -webkit-backdrop-filter: blur(16px) saturate(145%);
+    backdrop-filter: blur(16px) saturate(145%);
   }
   .quote-form {
-    padding: 24px;
+    padding: 26px 22px;
+    gap: 30px;
+    width: 100%;
   }
   .card-body {
     margin: -12px 7px 0;
